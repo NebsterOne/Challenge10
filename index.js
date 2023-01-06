@@ -4,3 +4,15 @@ const Intern = require("./lib/Intern");
 const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
+
+
+const employeeList = [];
+
+const managerQuestions = [
+{
+    name: "name",
+    type: "input",
+    message: "Manager's Name: ";
+}
+   
+]
