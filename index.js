@@ -9,6 +9,8 @@ const fs = require("fs");
 const employeeList = [];
 const idArray = [];
 
+console.log("Team profile Generator");
+
 const managerQuestions = [
 {
     name: "name",
