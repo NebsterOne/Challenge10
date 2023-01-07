@@ -6,8 +6,10 @@ const path = require("path");
 const fs = require("fs");
 
 
-const employeeList = [];
-const idArray = [];
+const managerArray = [];
+const engineerArray = [];
+const internArray = [];
+
 
 console.log("Team profile Generator");
 
