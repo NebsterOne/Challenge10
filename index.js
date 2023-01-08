@@ -115,7 +115,7 @@ function appMenu() {
     </div>`;
 
         engineerArray.push(engineerProfile);
-        console.log(engineerArray);
+        //console.log(engineerArray);
         newProfile();
       });
   }
@@ -180,7 +180,7 @@ function appMenu() {
     const finalengineerMembers = engineerArray.join("");
     const finalinternMembers = internArray.join("");
 
-    console.log(finalmanagerMembers);
+    //console.log(finalmanagerMembers);
 
     finalHTML(finalmanagerMembers, finalengineerMembers, finalinternMembers);
 
