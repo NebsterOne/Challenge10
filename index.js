@@ -4,6 +4,7 @@ const Intern = require("./lib/Intern");
 const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
+const finalHTML = require("./source/generateHTML");
 const { profile } = require("console");
 
 const managerArray = [];
@@ -110,7 +111,7 @@ function appMenu() {
             <p>
             <li class="list-group-item"> ID: #${engineer.getId()}<br></li>
             <li class="list-group-item"> Email: #$<a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a><br></li>
-            <li class="list-group-item"> GitHub: #${engineer.getGitHub()}</li>
+            <li class="list-group-item"> GitHub: #${engineer.getGitHub}</li>
             </p>
         </div>
     </div>`;
@@ -154,7 +155,7 @@ function appMenu() {
           answers.school
         );
 
-        const internProfile = `<div class="card manager flex-container">
+        const internProfile = `<div class="card manager fl0ex-container">
         <div class="card-top">
             <h2>${intern.getName()}</h2>
             <h3><i class="list-group-item"></i> ${intern.getRole()}</h3>
@@ -173,6 +174,23 @@ function appMenu() {
         newProfile();
       });
   }
+
+  const teamBuilt = () => {
+    console.log("Team member(s) have been added");
+
+    const finalmanagerMembers = managerArray.join("");
+    const finalengineerMembers = engineerArray.join("");
+    const finalinternMembers = internArray.join("");
+
+    console.log(finalmanagerMembers);
+
+    finalHTML(finalmanagerMembers, finalengineerMembers, finalinternMembers);
+
+    const filename = `${"index.html"}`;
+    fs.writeFile(filename, finalHTML(), (err) =>
+      err ? console.log(err) : console.log("It's Working!!")
+    );
+  };
 
   function newProfile() {
     inquirer
@@ -194,7 +212,7 @@ function appMenu() {
             internQuestions();
             break;
           default:
-          //Calling create HTML function
+            teamBuilt();
         }
       });
   }
