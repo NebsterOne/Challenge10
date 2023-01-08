@@ -56,7 +56,7 @@ function appMenu() {
             <li class="list-group-item"> ID: #${manager.getId()}<br></li>
             <li class="list-group-item"> Email: #$<a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a><br></li>
             <li class="list-group-item"> Office: #${
-              manager.managerOfficeNumber
+              manager.getManagerOfficeNumber
             }</li>
             </p>
         </div>
@@ -110,14 +110,68 @@ function appMenu() {
             <p>
             <li class="list-group-item"> ID: #${engineer.getId()}<br></li>
             <li class="list-group-item"> Email: #$<a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a><br></li>
-            <li class="list-group-item"> Office: #${engineer.gitHub}</li>
+            <li class="list-group-item"> GitHub: #${engineer.getGitHub()}</li>
             </p>
         </div>
     </div>`;
-      });
-    engineerArray.push(engineerProfile);
 
-    newProfile();
+        engineerArray.push(engineerProfile);
+        console.log(engineerArray);
+        newProfile();
+      });
+  }
+
+  function internQuestions() {
+    inquirer
+      .prompt([
+        {
+          name: "name",
+          type: "input",
+          message: "Intern's Name: ",
+        },
+        {
+          name: "id",
+          type: "input",
+          message: "Intern's ID number: ",
+        },
+        {
+          name: "email",
+          type: "input",
+          message: "Intenr's Email: ",
+        },
+        {
+          name: "school",
+          type: "input",
+          message: "Intern's School: ",
+        },
+      ])
+
+      .then((answers) => {
+        const intern = new Intern(
+          answers.name,
+          answers.id,
+          answers.email,
+          answers.school
+        );
+
+        const internProfile = `<div class="card manager flex-container">
+        <div class="card-top">
+            <h2>${intern.getName()}</h2>
+            <h3><i class="list-group-item"></i> ${intern.getRole()}</h3>
+        </div>
+        <div class="card-bottom">
+            <p>
+            <li class="list-group-item"> ID: #${intern.getId()}<br></li>
+            <li class="list-group-item"> Email: #$<a href="mailto:${intern.getEmail()}">${intern.getEmail()}</a><br></li>
+            <li class="list-group-item"> Office: #${intern.getSchool()}</li>
+            </p>
+        </div>
+    </div>`;
+
+        internArray.push(internProfile);
+
+        newProfile();
+      });
   }
 
   function newProfile() {
