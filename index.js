@@ -48,13 +48,13 @@ function appMenu() {
 
         const managerProfile = `<div class="card manager flex-container">
         <div class="card-top">
-            <h2>${manager.name()}</h2>
+            <h2>${manager.getName()}</h2>
             <h3><i class="list-group-item"></i> ${manager.getRole()}</h3>
         </div>
         <div class="card-bottom">
             <p>
             <li class="list-group-item"> ID: #${manager.getId()}<br></li>
-            <li class="list-group-item"> Email: #$<a href="mailto:${manager.gerEmail()}">${manager.getEmail()}</a><br></li>
+            <li class="list-group-item"> Email: #$<a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a><br></li>
             <li class="list-group-item"> Office: #${
               manager.managerOfficeNumber
             }</li>
@@ -65,31 +65,6 @@ function appMenu() {
         managerArray.push(managerProfile);
 
         newProfile();
-      });
-  }
-
-  function newProfile() {
-    inquirer
-      .prompt([
-        {
-          name: "profile",
-          type: "list",
-          message: "Select profile type: ",
-          choices: ["Engineer", "Intern", "End Here"],
-        },
-      ])
-
-      .then((choices) => {
-        switch (choices.profile) {
-          case "Engineer":
-            engineerQuestions();
-            break;
-          case "Intern":
-            internQuestions();
-            break;
-          default:
-          //Calling create HTML function
-        }
       });
   }
 
@@ -128,7 +103,7 @@ function appMenu() {
 
         const engineerProfile = `<div class="card manager flex-container">
         <div class="card-top">
-            <h2>${engineer.name()}</h2>
+            <h2>${engineer.getName()}</h2>
             <h3><i class="list-group-item"></i> ${engineer.getRole()}</h3>
         </div>
         <div class="card-bottom">
@@ -144,6 +119,33 @@ function appMenu() {
 
     newProfile();
   }
+
+  function newProfile() {
+    inquirer
+      .prompt([
+        {
+          name: "profile",
+          type: "list",
+          message: "Select profile type: ",
+          choices: ["Engineer", "Intern", "End Here"],
+        },
+      ])
+
+      .then((choices) => {
+        switch (choices.profile) {
+          case "Engineer":
+            engineerQuestions();
+            break;
+          case "Intern":
+            internQuestions();
+            break;
+          default:
+          //Calling create HTML function
+        }
+      });
+  }
+
+  managerQuestions();
 }
 
 appMenu();
