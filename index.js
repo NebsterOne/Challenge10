@@ -39,32 +39,91 @@ function appMenu() {
         message: "Manager's office number: ",
         }
    ])
-}
+    
 
-.then((answers) => {
+
+.then((answers)=>{
     const manager = new Manager(
         answers.name,
         answers.id,
         answers.email,
         answers.officeNumber);
 
-
-        <div class="card manager flex-container">
+        const managerProfile = (
+        `<div class="card manager flex-container">
         <div class="card-top">
             <h2>${manager.name()}</h2>
-            <h3><i class="fas fa-user-tie"></i> ${manager.getRole()}</h3>
+            <h3><i class="list-group-item"></i> ${manager.getRole()}</h3>
         </div>
         <div class="card-bottom">
             <p>
-            <i class="list-group-item"></i> ID #${manager.getId()}<br>
-            <i class="list-group-item"></i>Email #$<a href="mailto:${manager.gerEmail()}">${manager.getEmail()}</a><br>
-            <i class="list-group-item"></i> Office #${manager.managerOfficeNumber}
+            <li class="list-group-item"> ID: #${manager.getId()}<br></li>
+            <li class="list-group-item"> Email: #$<a href="mailto:${manager.gerEmail()}">${manager.getEmail()}</a><br></li>
+            <li class="list-group-item"> Office: #${manager.managerOfficeNumber}</li>
             </p>
         </div>
-    </div>    
+    </div>`) 
+
+
 
 
     teamMember.push(manager);
-    managerArray.push(answers)
+    managerArray.push(answers);
+    
+        })}
+
+
+    function engineerQuestions() {
+        inquirer
+          .prompt([
+
+        {
+        name: "name",
+        type: "input",
+        message: "Engineer's Name: ",
+        }
+        {    
+        name: "id",
+        type: "input",
+        message: "Engineer's ID number: ",
+        }
+        {    
+        name: "email",
+        type: "input",
+        message: "Engineer's Email: ",
+        }
+        {
+        name: "gitHub",
+        type: "input",
+        message: "Engineer's gitHub username: ",
+        }
+   ])
+
+
+
+.then((answers)=>{
+    const engineer = new Engineer(
+        answers.name,
+        answers.id,
+        answers.email,
+        answers.gitHub);
+
+        const managerProfile = (
+        `<div class="card manager flex-container">
+        <div class="card-top">
+            <h2>${engineer.name()}</h2>
+            <h3><i class="list-group-item"></i> ${engineer.getRole()}</h3>
+        </div>
+        <div class="card-bottom">
+            <p>
+            <li class="list-group-item"> ID: #${engineer.getId()}<br></li>
+            <li class="list-group-item"> Email: #$<a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a><br></li>
+            <li class="list-group-item"> Office: #${engineer.gitHub}</li>
+            </p>
+        </div>
+    </div>`) 
 
 })
+teamMember.push(engineer);
+engineerArray.push(answers);
+}} 
