@@ -19,22 +19,22 @@ function appMenu() {
           .prompt([
 
         {
-        name: "managerName",
+        name: "name",
         type: "input",
         message: "Manager's Name: ",
         }
         {    
-        name: "managerID",
+        name: "id",
         type: "input",
         message: "Manager's ID number: ",
         }
         {    
-        name: "managerEmail",
+        name: "email",
         type: "input",
         message: "Manager's Email: ",
         }
         {
-        name: "managerOfficeNummber",
+        name: "officeNummber",
         type: "input",
         message: "Manager's office number: ",
         }
@@ -43,10 +43,28 @@ function appMenu() {
 
 .then((answers) => {
     const manager = new Manager(
-        answers.mangerName,
-        answers.managerID,
-        answers.managerEmail,
-        answers.managerOfficeNumber,
-    )
+        answers.name,
+        answers.id,
+        answers.email,
+        answers.officeNumber);
+
+
+        <div class="card manager flex-container">
+        <div class="card-top">
+            <h2>${manager.name()}</h2>
+            <h3><i class="fas fa-user-tie"></i> ${manager.getRole()}</h3>
+        </div>
+        <div class="card-bottom">
+            <p>
+            <i class="list-group-item"></i> ID #${manager.getId()}<br>
+            <i class="list-group-item"></i>Email #$<a href="mailto:${manager.gerEmail()}">${manager.getEmail()}</a><br>
+            <i class="list-group-item"></i> Office #${manager.managerOfficeNumber}
+            </p>
+        </div>
+    </div>    
+
+
+    teamMember.push(manager);
+    managerArray.push(answers)
 
 })
