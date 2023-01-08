@@ -33,7 +33,7 @@ function appMenu() {
           message: "Manager's Email: ",
         },
         {
-          name: "officeNummber",
+          name: "officeNumber",
           type: "input",
           message: "Manager's office number: ",
         },
@@ -56,9 +56,7 @@ function appMenu() {
             <p>
             <li class="list-group-item"> ID: #${manager.getId()}<br></li>
             <li class="list-group-item"> Email: #$<a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a><br></li>
-            <li class="list-group-item"> Office: #${
-              manager.getManagerOfficeNumber
-            }</li>
+            <li class="list-group-item"> Office: #${manager.getOfficeNumber()}</li>
             </p>
         </div>
     </div>`;
@@ -111,7 +109,7 @@ function appMenu() {
             <p>
             <li class="list-group-item"> ID: #${engineer.getId()}<br></li>
             <li class="list-group-item"> Email: #$<a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a><br></li>
-            <li class="list-group-item"> GitHub: #${engineer.getGitHub}</li>
+            <li class="list-group-item"> GitHub: #${engineer.getGitHub()}</li>
             </p>
         </div>
     </div>`;
@@ -187,8 +185,10 @@ function appMenu() {
     finalHTML(finalmanagerMembers, finalengineerMembers, finalinternMembers);
 
     const filename = `${"index.html"}`;
-    fs.writeFile(filename, finalHTML(), (err) =>
-      err ? console.log(err) : console.log("It's Working!!")
+    fs.writeFile(
+      filename,
+      finalHTML(finalmanagerMembers, finalengineerMembers, finalinternMembers),
+      (err) => (err ? console.log(err) : console.log("It's Working!!"))
     );
   };
 
