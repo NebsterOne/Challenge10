@@ -13,11 +13,35 @@ const internArray = [];
 
 console.log("Team profile Generator");
 
-const managerQuestions = [
-{
-    name: "name",
-    type: "input",
-    message: "Manager's Name: ";
-}
+function appMenu
+    function managerQuestions() {
+        inquirer
+          .prompt([
+
+        {
+        name: "name",
+        type: "input",
+        message: "Manager's Name: ",
+        }
+        {    
+        name: "managerId",
+        type: "input",
+        message: "Manager's ID number: ",
+        }
+        {    
+        name: "managerEmail",
+        type: "input",
+        message: "Manager's Email: ",
+        }
+        {    
+        name: "managerId",
+        type: "input",
+        message: "Manager's ID number: ",
+        }
+        {
+        name: "managerOfficeNummber",
+        type: "input",
+        message: "Manager's office number: ",
+        }
    
 ]
