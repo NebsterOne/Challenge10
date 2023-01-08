@@ -21,21 +21,22 @@ const finalHTML = (
         </head>
         <body>
             <!-- Container for page content -->
-            <div class="container-fluid">
+            <div class="container-fluid ">
                 <!-- Title bar -->
                 <div class="row">
                     <div class="col-12 jumbotron mb-3 team-heading">
-                        <h1 class="text-center">MY TEAM </h1>
+                        <h1 class="text-center p-3 mb-2 bg-primary text-white">MY TEAM </h1>
                     </div>
                 </div>
             <!-- Page content - Employee's Cards-->
-            <div class="container">
-                <div class="row justify-content-center">
+            <div class="row justify-content-center container d-sm-flex">
+            <!--     <div class="row justify-content-center"> -->
+          
                     ${finalmanagerMembers},  
                     ${finalengineerMembers},  
                     ${finalinternMembers},   
 
-                    </div>
+                 
                 </div>
             </div>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" 

@@ -47,12 +47,12 @@ function appMenu() {
           answers.officeNumber
         );
 
-        const managerProfile = `<div class="card manager flex-container">
-        <div class="card-top">
+        const managerProfile = `<div class="card bg-light mb-3" style="max-width: 18rem;">
+        <div class="card-header p-3 mb-3 bg-warning text-dark" style="max-width: 100%;">
             <h2>${manager.getName()}</h2>
             <h3><i class="list-group-item"></i> ${manager.getRole()}</h3>
         </div>
-        <div class="card-bottom">
+        <div class="card-body flex justify-content-center text-white;">
             <p>
             <li class="list-group-item"> ID: #${manager.getId()}<br></li>
             <li class="list-group-item"> Email: #$<a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a><br></li>
@@ -100,12 +100,12 @@ function appMenu() {
           answers.gitHub
         );
 
-        const engineerProfile = `<div class="card manager flex-container">
-        <div class="card-top">
+        const engineerProfile = `<div class="card bg-light mb-3" style="max-width: 18rem;">
+        <div class="card-header p-3 mb-2 bg-info text-white" style="max-width: 100%;">
             <h2>${engineer.getName()}</h2>
             <h3><i class="list-group-item"></i> ${engineer.getRole()}</h3>
         </div>
-        <div class="card-bottom">
+        <div class="card-body flex justify-content-center text-white;">
             <p>
             <li class="list-group-item"> ID: #${engineer.getId()}<br></li>
             <li class="list-group-item"> Email: #$<a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a><br></li>
@@ -153,12 +153,12 @@ function appMenu() {
           answers.school
         );
 
-        const internProfile = `<div class="card manager fl0ex-container">
-        <div class="card-top">
+        const internProfile = `<div class="card bg-light mb-3" style="max-width: 18rem;">
+        <div class="card-header p-3 mb-2 bg-success text-white style="max-width: 100%;">
             <h2>${intern.getName()}</h2>
             <h3><i class="list-group-item"></i> ${intern.getRole()}</h3>
         </div>
-        <div class="card-bottom">
+        <div class="card-body flex justify-content-center text-white;">
             <p>
             <li class="list-group-item"> ID: #${intern.getId()}<br></li>
             <li class="list-group-item"> Email: #$<a href="mailto:${intern.getEmail()}">${intern.getEmail()}</a><br></li>
