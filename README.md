@@ -40,6 +40,17 @@ The following image shows a mock-up of the generated HTML’s appearance and fun
 
 [Video featuring five boxes listing employee names, titles, and other key info.](./Video/Challenge10.webm)
 
+
+
+ ## Screenshots
+  ![Team Profile Generator- Screenshot 1](./Images/S1.png)
+
+  ![Team Profile Generator- Screenshot 2](./Images/S2.png)
+
+  ![Team Profile Generator- Screenshot 3](./Images/S3.png)
+
+  ![Team Profile Generator- Screenshot 4](./Images/S4.png)
+
 ## Questions
 
 > Should you have any questions, please send email to nelectrik@gmail.com.
